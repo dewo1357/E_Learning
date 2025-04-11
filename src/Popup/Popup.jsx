@@ -1,4 +1,4 @@
-import "./popup.css";
+import "./Popup.css";
 const Overlay = ({ message, Finish }) => {
   return (
     <div className="Overlay">
