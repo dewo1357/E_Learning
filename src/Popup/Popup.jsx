@@ -14,7 +14,7 @@ const Overlay = ({ message, Finish }) => {
               Oke
             </button>
           ) : (
-            <img src="/Images/Loading.gif" alt="" />
+            <img src="/Component/Loading.gif" alt="" />
           )}
         </div>
       </div>
