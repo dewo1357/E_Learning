@@ -3,12 +3,15 @@ import "./style.css"; // Kita akan buat file CSS terpisah
 import { useEffect } from "react";
 import Popup from "../Popup/Popup";
 import { PostData, UploadImageToAPI } from "../Utilities/POST";
+import { useNavigate } from "react-router-dom";
 const UserSettings = () => {
   // State untuk data profil
   const [profile, setProfile] = useState({
     name: "John Doe",
     username: "johndoe",
   });
+
+  const navigate = useNavigate()
 
   //Popup State
   const [turnOnPopup, setTurnOnpOpup] = useState(false);
@@ -19,12 +22,16 @@ const UserSettings = () => {
 
   useEffect(() => {
     const account = JSON.parse(localStorage.getItem("account"));
-    const [first, last] = account.name.split(" ");
-    setProfile({
-      firstName: first,
-      lastName: last,
-      username: account.username,
-    });
+    if (account) {
+      const [first, last] = account.name.split(" ");
+      setProfile({
+        firstName: first,
+        lastName: last,
+        username: account.username,
+      });
+    }else{
+      navigate("/")
+    }
   }, []);
 
   // State untuk form password
@@ -111,7 +118,7 @@ const UserSettings = () => {
     }
 
     setErrors(newErrors);
-    console.log(valid)
+    console.log(valid);
     return valid;
   };
 
@@ -168,7 +175,7 @@ const UserSettings = () => {
       let result = await PostData(password, "ChangePassword", true);
       if (result.status === 200) {
         SetMessage("Berhasil");
-      }else{
+      } else {
         SetMessage("Gagal");
       }
       setPassword({
@@ -177,8 +184,8 @@ const UserSettings = () => {
         confirmPassword: "",
       });
       SetFinsihProcess(true);
-    }else{
-      console.log("Salah")
+    } else {
+      console.log("Salah");
     }
   };
 

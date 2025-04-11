@@ -15,6 +15,10 @@ import AboutUs from './About/index.jsx'
 
 const Router = createBrowserRouter([
   {
+    path : "*",
+    element : <><h1>NOT FOUND</h1></>
+  },
+  {
     path : "/AboutUs",
     element : <AboutUs/>
   },

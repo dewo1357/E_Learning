@@ -65,6 +65,8 @@ const ContainerForm = ({
                 `https://qfoylbowzoertpojnhvy.supabase.co/storage/v1/object/public/modulepicture//${data[0].PictureName}`
             )
           : false;
+      }else{
+        navigate("/")
       }
     } else {
       setContent({

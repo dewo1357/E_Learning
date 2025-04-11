@@ -200,4 +200,8 @@
     .FormAuth button{
         width: 100%;
     }
+
+    .FormAuthLayout h1{
+        font-size: 50px;
+    }
 }

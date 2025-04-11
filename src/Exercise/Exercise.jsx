@@ -9,7 +9,7 @@ import { GetData } from "../Utilities/GET";
 import { useNavigate } from "react-router-dom";
 import { nanoid } from "nanoid";
 
-const Exercise = ({ idModule, learn,openNavContent }) => {
+const Exercise = ({ idModule, learn, openNavContent }) => {
   const [ArrayExerCise, SetArrayExerCise] = useState([]);
   const [insAns, SetisAns] = useState([]);
   const [Loading, SetLoading] = useState(true);
@@ -39,11 +39,15 @@ const Exercise = ({ idModule, learn,openNavContent }) => {
   useEffect(() => {
     if (Loading) {
       const data = JSON.parse(localStorage.getItem("Module"));
-      const MyModule = data.filter((item) => item.id === idModule);
-      SetTitle(MyModule[0].Title);
-      GetExerCise();
+      if (data) {
+        const MyModule = data.filter((item) => item.id === idModule);
+        SetTitle(MyModule[0].Title);
+        GetExerCise();
 
-      SetLoading(false);
+        SetLoading(false);
+      }else{
+        navigate("/")
+      }
     }
   }, []);
 
@@ -130,8 +134,6 @@ const Exercise = ({ idModule, learn,openNavContent }) => {
     setTurnOnpOpup(false);
   };
 
-  const Render = () => {};
-
   const formSoal = useRef();
   const PictSoal = useRef();
   const HrefCheck = (id) => {
@@ -191,16 +193,16 @@ const Exercise = ({ idModule, learn,openNavContent }) => {
 
   return (
     <>
-      <div className="ExerCiseContainer"  >
+      <div className="ExerCiseContainer">
         <div
           className="ContainerSoal"
           style={{
             transition: "1000ms",
             border: "10px",
-            width: CheckSubModule || openNavContent? "70%" : "90%",
+            width: CheckSubModule || openNavContent ? "70%" : "90%",
             scrollBehavior: "smooth",
-            marginLeft:openNavContent?"17%":"1%",
-            marginRight:CheckSubModule?"17%":"1%"
+            marginLeft: openNavContent ? "17%" : "1%",
+            marginRight: CheckSubModule ? "17%" : "1%",
           }}
         >
           {!learn ? <h1>Add Exercise</h1> : null}
@@ -338,15 +340,17 @@ const Exercise = ({ idModule, learn,openNavContent }) => {
                 }}
               >
                 <div className="PictureSoal">
-                  {ArrayExerCise[NumberExercise]?<img
-                    src={
-                      ArrayExerCise[NumberExercise].ImagesSoal
-                        ? `
+                  {ArrayExerCise[NumberExercise] ? (
+                    <img
+                      src={
+                        ArrayExerCise[NumberExercise].ImagesSoal
+                          ? `
                                 https://qfoylbowzoertpojnhvy.supabase.co/storage/v1/object/public/modulepicture//${ArrayExerCise[NumberExercise].ImagesSoal}`
-                        : ""
-                    }
-                  ></img>:null}
-                   <h2>{ArrayExerCise[NumberExercise].Soal}</h2>
+                          : ""
+                      }
+                    ></img>
+                  ) : null}
+                  <h2>{ArrayExerCise[NumberExercise].Soal}</h2>
                 </div>
                 {ArrayExerCise[NumberExercise]["Ans"].map((item, index) => (
                   <button

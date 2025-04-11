@@ -2,6 +2,7 @@
 import "./Home.css"
 import ActionForm from "./FormLayout/FormLayout"
 import FormSmarphone from "./Smarphone/FormSmarphone"
+import { useEffect } from "react"
 
 
 const HeaderTitle = () => {
@@ -23,7 +24,13 @@ const HeaderTitle = () => {
 
 
 const Head = ({ login }) => {
-   
+   const account = localStorage.getItem('account')
+   useEffect(()=>{
+    if(account){
+        location.href="/Topics"
+    }
+   },[])
+   if(!account){
     return (
         <>
             <div className="Header">
@@ -35,6 +42,10 @@ const Head = ({ login }) => {
             {/*==============Content Smartphone==============*/}
         </>
     )
+   }else{
+    location.href="/Topics"
+   }
+    
 }
 
 export default Head
