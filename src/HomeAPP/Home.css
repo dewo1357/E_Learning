@@ -1,0 +1,203 @@
+.flexSpaceBetween {
+    justify-content: space-between;
+    display: flex;
+}
+
+.flexCenterJustify {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.Header {
+    background-color: rgb(255, 255, 255);
+    display: grid;
+    grid-template-columns: 60% 40%;
+    justify-content: space-between;
+
+}
+
+.containerForm {
+    border-radius: 10px;
+    border-right: 0px;
+    padding: 0.2vh;
+    height: 96vh;
+    background-color: rgba(71, 103, 209, 0.507);
+}
+
+.ActionHeader button {
+    height: 40px;
+    width: 100px;
+    margin-right: 2vh;
+    border: 0px;
+    border-radius: 5px;
+    font-weight: bold;
+    background-color: rgb(15, 15, 15);
+    color: white;
+    margin: 2vh;
+    margin-bottom: 15px;
+}
+
+.ActionHeader button:hover {
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}
+
+.Hamburg {
+    display: none;
+
+}
+
+.Hamburg button {
+    background-color: transparent;
+    margin: 0px;
+    height: 35x;
+    width: 35px;
+    border-radius: 10px;
+}
+
+.Hamburg button:hover {
+    background-color: rgb(207, 253, 0);
+
+}
+
+.OptionAction {
+    display: none;
+}
+
+.OptionAction button {
+    border-radius: 0px;
+}
+
+.ContentLeft img {
+    width: 50%
+}
+
+.FormAuthLayout {
+    width: 100%;
+    height: 100%;
+}
+
+.FormAuthLayout h1 {
+    margin: 0px;
+    font-size: 12vh;
+    margin-bottom: 0.5vh;
+    text-align: center;
+}
+
+.FormAuth {
+    display: block;
+    flex-wrap: wrap;
+}
+
+.FormAuth form {
+    margin-left: 1vh;
+    margin-right: 3vh;
+    padding:2vh;
+}
+
+.FormAuth label{
+    font-size:  3vh;
+}
+
+.FormAuth button {
+    margin-top: 1vh;
+    margin-bottom: -2%;
+    height: 8vh;
+    width: 100%;
+    border: 0px solid;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.FormAuth button:hover {
+    background-color: rgb(141, 141, 231);
+}
+
+.FormAuth input {
+    width: 100%;
+    height: 5vh;
+    margin-bottom: 1vh;
+    border-radius: 2px;
+    border: 1px solid rgba(0, 0, 0, 0.247);
+    background-color: whitesmoke;
+}
+
+.FormSmartPhone{
+    display: none;
+}
+
+
+@media only screen and (max-width: 1000px) {
+
+    .Header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 10px;
+    }
+
+     .Header img {
+        width: 32%;
+        margin-left: -5px;
+    }
+
+    .FormSmartPhone{
+        display: block;
+    }
+
+    .containerForm {
+        display: none;
+    }
+
+    .ContentLeft {
+        display: none;
+    }
+
+
+    .ActionHeader {
+        display: none;
+    }
+
+    .FormAuth {
+        margin-top: 50px;
+    }
+
+    .Hamburg {
+        display: block;
+    }
+
+    .Hamburg img{
+        width: 42px;
+       
+    }
+
+    .OptionAction {
+        transition: 1000ms;
+        flex-wrap: wrap;
+        background-color: black;
+        position: absolute;
+        right: 10px;
+        margin-top: 10px;
+    }
+
+    .ActionHeader button {
+        border-radius: 0px;
+    }
+
+    .OptionAction button {
+        width: 100%
+    }
+
+    .FormAuth input {
+        width:100%;
+        height: 30px;
+    }
+
+    .FormAuth button{
+        width: 100%;
+    }
+}

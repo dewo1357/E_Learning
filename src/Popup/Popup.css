@@ -1,0 +1,74 @@
+.popup{
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.534);
+    height: 100%;
+    width : 100%;
+    top : 0px;
+    left: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+}
+
+.Overlay{
+    background-color: rgb(255, 255, 255);
+    width : 400px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center ;
+    border-radius: 10px;
+    text-align: center;
+    padding: 10px;
+}
+
+.ContentImgOverlay{
+    width : 400px
+}
+
+.Overlay img{
+    width : 80px;
+}
+
+.ButtonDialog{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.Stop{
+    justify-content: center ;
+}
+
+.ButtonDialog button{
+    background-color: black;
+    color: white;
+    border: 0px solid;
+    border-radius: 5px;
+    height: 35px;
+    width : 30%;
+    font-weight: bold;
+}
+
+.ButtonDialog button:hover{
+    background-color: rgb(68, 68, 68);
+    cursor: pointer;
+}
+
+.Overlay form{
+    text-align: left;
+}
+
+.Overlay input{
+    height: 30px;
+    width: 100%;
+}
+
+.Overlay button{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 103%;
+    height: 40px;
+    margin : 5px
+}

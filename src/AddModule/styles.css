@@ -1,0 +1,109 @@
+
+.ContainerActionModule{
+  height: 85vh;
+  overflow-y: auto;
+  transition: 100ms;
+}
+
+.controls {
+    display: flex;
+    border: 1px solid #ccc;
+    border-top: 0;
+    padding: 10px;
+  }
+  
+  .controls-right {
+    margin-left: auto;
+  }
+  
+  .state {
+    margin: 10px 0;
+    font-family: monospace;
+  }
+  
+  .state-title {
+    color: #999;
+    text-transform: uppercase;
+  }
+
+  .Headers{
+    margin-top: 20px;
+    text-align: right;
+  }
+
+  .Headers h1{
+    margin: 10px;
+    text-align: right;
+  }
+
+  .Headers button{
+    height: 30px;
+    width : 100px
+  }
+  .FormHeader{
+    margin-bottom: 20px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    align-items: center;
+    width : 100%;
+   
+  }
+
+  .FormHeader input {
+    height: 40px;
+    width : 100%;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    border: 0px solid;
+    background-color: whitesmoke;
+  }
+
+  .FormInformation{
+    margin-top: 40px;
+  }
+
+  .UploadImg{
+    display: flex;
+    justify-content: end;
+    overflow-wrap: anywhere;
+  }
+
+  .UploadImg img{
+    height: 100%;
+    width : 100%;
+    border-radius: 10px;
+    object-fit: cover;
+  }
+
+  .UploadImg label{
+   cursor: pointer;
+  }
+
+  .ContainerImage{
+    width : 380px;
+    height: 250px;
+    border: 1px solid rgba(0, 0, 0, 0.253); 
+    object-fit:contain;
+    background-position: center;
+    background-size: 100px;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    
+  }
+
+
+  @media only screen and (max-width: 900px) {
+    .FormHeader{
+      display: block;
+    }
+    .UploadImg{
+      justify-content: start;
+    }
+
+    .ContainerActionModule{
+      margin: 0px;
+    }
+  }

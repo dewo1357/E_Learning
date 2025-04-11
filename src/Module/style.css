@@ -1,0 +1,129 @@
+.ContainerReadModule{
+    display: flex;
+    gap:10px;
+    transition: 100ms;
+}
+
+.HeaderListSubModule{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    color: white;
+}
+
+.HeaderListSubModule img{
+    width:50px;
+    height: 50px;          
+}
+
+.HeaderListSubModule button{
+    background-color:transparent;
+    border : 0px
+}
+
+.ContentModule{
+    text-align: justify;
+    padding: 10px;
+    margin-left: 100px;
+}
+
+@media only screen and (max-width: 900px){
+    .ContentModule{
+        margin: 0px;
+    }
+}
+
+.ContainerSoal form button{
+    width : 100%;
+    height: 30px ;
+    margin-bottom: 10px;
+}
+
+.ContainerSoal form label{
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    
+}
+
+.ListSubModule{
+    background-color: rgb(53, 142, 184);
+    overflow:auto ;
+    position: fixed;
+    height: 100%;
+    right: 0px;
+    top: 0px;
+}
+
+
+
+.ListSubModule h2{
+    text-align: center;
+}
+
+.ListSubModule ol{
+    margin: 0px;
+    padding : 0px;
+}
+
+.ListSubModule li{
+    text-decoration: none;
+    list-style: none;
+    height: 40px;
+    
+    display: flex;
+    margin-bottom : 5px;   
+}
+
+.ComponentSubModule{
+    background-color: darkgray;
+    width : 40px
+}
+
+.ComponentSubModule button{
+    width : 40px;
+    height: 100%;
+    cursor: pointer;
+    text-align: left;
+    text-align: center;
+}
+
+.choose button{
+    background-color: yellow;
+}
+
+.isAans button{
+    background-color: rgb(136, 136, 172);
+}
+
+.optionsToOpen{
+    display: flex;
+    align-items: center;
+}
+
+.optionsToOpen button{
+    background-color: transparent;
+    border: 0px;
+}
+
+.optionsToOpen img{
+    width:50px;
+    object-position: 0px;
+}
+
+.ol{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+@media only screen and (max-width: 500px){
+.ListSubModule{
+   
+    display: none;
+    visibility: hidden;
+}
+}
+

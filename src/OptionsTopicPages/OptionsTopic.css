@@ -1,0 +1,301 @@
+/* Header Styles */
+.containerHeader {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+   
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.titleContainer {
+    background-color: rgb(3, 96, 150);
+    color: white;
+    border-radius: 10px;
+    padding: 8px 12px;
+    margin-right: 15px;
+}
+
+.titleContainer h1 {
+    font-size: 1.3rem;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Content Styles */
+.ContentOptions {
+    margin-top: 80px;
+    padding: 15px;
+}
+
+.greeting {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Category Buttons */
+.CategoryLesson {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 20px;
+    padding: 0 15px;
+}
+
+.CategoryLesson button {
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: none;
+    background-color: #2c3e50;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    min-width: 80px;
+    text-align: center;
+}
+
+.CategoryLesson button:hover {
+    background-color: #34495e;
+}
+
+/* Study Cards */
+.Study {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 0 15px;
+}
+
+.ComponentStudy {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 100%;
+    max-width: 300px;
+    transition: transform 0.3s;
+}
+
+.ComponentStudy:hover {
+    transform: translateY(-5px);
+}
+
+.ImageContentComponent img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.FooterContent {
+    padding: 15px;
+    color: #333;
+}
+
+.FooterContent h2 {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+}
+
+.FooterContent p {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.FooterContent button {
+    width: 100%;
+    padding: 10px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.FooterContent button:hover {
+    background-color: #2980b9;
+}
+
+/* Desktop Navigation */
+.desktop-menu {
+    display: flex;
+    gap: 8px;
+}
+
+.desktop-menu button {
+    padding: 8px 12px;
+    background: transparent;
+    border: none;
+    color: #333;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.3s;
+    white-space: nowrap;
+}
+
+.desktop-menu button:hover {
+    background-color: #2c3e50;
+    color: white;
+}
+
+/* Mobile Navigation */
+.burger-menu {
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #333;
+    padding: 5px;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
+
+.burger-menu:hover {
+    background-color: #eee;
+}
+
+.mobile-menu {
+    position: fixed;
+    top: 70px;
+    right: 15px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    width: 250px;
+    z-index: 999;
+    overflow: hidden;
+    transform-origin: top right;
+    animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.mobile-menu button {
+    padding: 12px 20px;
+    text-align: left;
+    border: none;
+    background: none;
+    cursor: pointer;
+    width: 100%;
+    color: #333;
+    font-size: 1rem;
+    transition: background-color 0.2s;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+}
+
+.mobile-menu button:last-child {
+    border-bottom: none;
+}
+
+.mobile-menu button:hover {
+    background-color: #f5f5f5;
+    color: #2c3e50;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .container {
+        flex-wrap: wrap;
+    }
+    
+    .titleContainer {
+        order: 1;
+        flex: 1;
+        min-width: 0;
+    }
+    
+    .burger-menu {
+        order: 2;
+    }
+    
+    .desktop-menu {
+        display: none;
+    }
+    
+    .greeting {
+        font-size: 1.5rem;
+    }
+    
+    .CategoryLesson {
+        justify-content: flex-center;
+    }
+    
+    .CategoryLesson button {
+        flex: 1 0 calc(50% - 10px);
+        max-width: calc(50% - 10px);
+        font-size: 13px;
+        padding: 8px 5px;
+    }
+    
+    .Study {
+        gap: 15px;
+        padding: 0px;
+    }
+
+    .ComponentStudy {
+        overflow: hidden;
+        width: 40%;
+    }
+
+    .ImageContentComponent img{
+        height: 100px;
+        object-fit: cover;
+    }
+        
+
+    
+}
+
+@media (min-width: 769px) {
+    .burger-menu, .mobile-menu {
+        display: none;
+    }
+    
+    .desktop-menu {
+        display: flex;
+    }
+    
+    .titleContainer h1 {
+        font-size: 1.5rem;
+    }
+    
+    .container {
+        padding: 10px 20px;
+    }
+}

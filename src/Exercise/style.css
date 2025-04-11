@@ -1,0 +1,146 @@
+
+
+
+.ExerCise{
+    margin-left:6%; 
+}
+
+.ContainerSoal{
+     padding: 20px;
+     
+}
+
+.FooterExerCise {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    width:100.2%;
+   
+}
+
+.FooterExerCise button{
+    width:55%;
+    height: 40px;
+    margin-bottom: 10px;
+}
+
+.ContainerSoal textarea{
+    height: 90px;
+    width:100%;
+}
+
+
+
+.ContainerAsk{
+    width:100%;
+    margin-top: 10px;
+}
+
+.ComponentSoal{
+    margin-bottom: 10px;
+    height: 40px;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 70% 29%;
+    scroll-behavior: smooth;
+    
+}
+
+.ContainerSoal form{
+    transition: 1000ms;
+    scroll-behavior: smooth;
+    
+}
+
+.ListSoal{
+    width:25%;
+    position: fixed;
+    height: 100%;
+    right: 0px;
+    top: 0px;
+    display: none;
+
+   
+}
+
+.ExerCiseContainer{
+    scroll-behavior: smooth;
+}
+
+.Exerciselearn{
+    border: 0px solid;
+    background-color: rgb(166, 196, 224);
+    width:100%;
+    padding: 10px;
+    text-align: left;
+    grid-template-columns: 5% 95%;
+    align-items: center;
+    height: 50px;
+    cursor:pointer
+}
+
+.learn:hover{
+    background-color: rgb(192, 190, 190);
+}
+
+.choosed{
+    background-color: yellow;
+}
+
+.FooterButtonLearn{
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    
+}
+
+.FooterButtonLearn button{
+    height: 40px;
+    width:20%;
+    cursor: pointer;
+}
+
+.ImageSoal{
+    display: flex;
+    gap:20px;
+   
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.ImageSoal label{
+    width: 300px;
+    height: 100px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.ImageSoal textarea{
+    height: 100%;
+    height: 200px;
+}
+
+.ImageSoal label{
+    cursor: pointer;
+}
+
+.ImageSoal img{
+    height: 207px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow-x: hidden;
+    object-fit: cover;
+    object-position: center;
+}
+
+.ContainerEachSoal{
+    margin-top: 150px;
+    padding: 20px;     
+}
+
+
+.PictureSoal img{
+    width: 60%;
+}
