@@ -20,6 +20,7 @@ const LoginForm = () => {
             pass: e.target.pass.value,
         }
         const response = await PostData(data, "SignInAccount")
+        console.log(response)
         if (response === false) {
             SetMessage("Terjadi Kesalahan")
             SetFinsihProcess(true)

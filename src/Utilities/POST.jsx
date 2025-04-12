@@ -1,4 +1,4 @@
-const UrlBackEnd = "http://localhost:5000";
+const UrlBackEnd = "https://cruel-davita-sadeshop-79e55b22.koyeb.app";
 const PostData = async (data, EndPoint, auth = false) => {
     //options if not authentication or not
     let Bodydata = {
@@ -21,12 +21,14 @@ const PostData = async (data, EndPoint, auth = false) => {
     //Fetch To API
     try {
         const response = await fetch(UrlBackEnd + "/" + EndPoint, Bodydata)
+        console.log(response)
         if (!response || response.status !== 200) {
             console.log("Failed To Send Data")
             return false
         } else {
             return response
         }
+        
     } catch (err) {
         console.log(err.message)
     }
