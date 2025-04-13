@@ -45,7 +45,7 @@ const HeaderTopics = () => {
       {account !== null && (
         <div className="container">
           <div className="titleContainer">
-            <h1>Sumatera Computer Centre</h1>
+            <h1>Daily Learn Code</h1>
           </div>
 
           {isMobile ? (
