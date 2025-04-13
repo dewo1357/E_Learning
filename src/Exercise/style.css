@@ -151,9 +151,15 @@
     .PictureSoal img{
         width: 100%;
     }
+
+    .FooterButtonLearn{
+        margin-top: 100px;
+        margin-bottom: 100px;
+    }
     
     .FooterButtonLearn button{
         width:40%;
+        
     }
 
     .ExerCise{

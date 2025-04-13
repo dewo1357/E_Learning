@@ -394,7 +394,7 @@ const Exercise = ({ idModule, learn, openNavContent }) => {
                     setTurnOnpOpup(true);
                   }
                 }}
-              >
+              disabled={ArrayExerCise.length !==0?false:true}>
                 {NumberExercise < ArrayExerCise.length - 1 ? "Next" : "Done"}
               </button>
             </div>
