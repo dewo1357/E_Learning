@@ -199,10 +199,11 @@ const Exercise = ({ idModule, learn, openNavContent }) => {
           style={{
             transition: "1000ms",
             border: "10px",
-            width: CheckSubModule || openNavContent ? "70%" : "90%",
+            width: CheckSubModule || openNavContent ? "70%" : innerWidth < 900 ? null : "90%",
             scrollBehavior: "smooth",
-            marginLeft: openNavContent ? "17%" : "1%",
+            marginLeft: openNavContent ? "17%" : innerWidth < 900 ? " " : "1%",
             marginRight: CheckSubModule ? "17%" : "1%",
+            
           }}
         >
           {!learn ? <h1>Add Exercise</h1> : null}

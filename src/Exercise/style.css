@@ -1,13 +1,9 @@
 
 
 
-.ExerCise{
-    margin-left:6%; 
-}
 
 .ContainerSoal{
      padding: 20px;
-     
 }
 
 .FooterExerCise {
@@ -23,6 +19,7 @@
     height: 40px;
     margin-bottom: 10px;
 }
+
 
 .ContainerSoal textarea{
     height: 90px;
@@ -142,5 +139,24 @@
 
 
 .PictureSoal img{
-    width: 60%;
+    width: 50%;
+}
+
+
+.ExerCise{
+    margin-left: 6%;
+}
+
+@media only screen and (max-width: 1000px){
+    .PictureSoal img{
+        width: 100%;
+    }
+    
+    .FooterButtonLearn button{
+        width:40%;
+    }
+
+    .ExerCise{
+        margin-left: 0%;
+    }
 }
