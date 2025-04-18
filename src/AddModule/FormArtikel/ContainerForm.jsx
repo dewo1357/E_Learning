@@ -110,7 +110,9 @@ const ContainerForm = ({
         LinkEmbed: data.LinkEmbed,
       };
       console.log("Update SubModuleProcess Process");
-      await EditData(data, `SettingSubModule/${idModule}`);
+      await EditData(data, `SettingSubModule/${IdSubModule}`);
+      localStorage.removeItem(`ListDetailModule-${idModule}`)
+      localStorage.removeItem('Module')
     } else if (Setting) {
       console.log("Update Process");
       await EditData(data, `SettingModule/${idModule}`);
@@ -125,7 +127,8 @@ const ContainerForm = ({
       };
 
       await PostData(SubMyModule, `AddSubModule`, fetch);
-      localStorage.removeItem("ListDetailModule");
+      localStorage.removeItem(`ListDetailModule-${idModule}`)
+      localStorage.removeItem('Module')
     } else {
       await PostData(data, "AddModule", fetch);
     }

@@ -55,8 +55,8 @@
     border-radius: 10px;
     padding: 5px;
     height: 78vh;
-    overflow-y: auto;
     margin-right: 5px;
+    margin-bottom: 50px;
 }
 
 .ContainerModuleDetail{
