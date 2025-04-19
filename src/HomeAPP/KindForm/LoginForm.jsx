@@ -26,7 +26,9 @@ const LoginForm = () => {
             SetFinsihProcess(true)
             return false
         } else {
-            const result = await response.json();
+            let result = await response.json();
+            const dateLogin = new Date().getDate()
+            result = {...result,dateLogin}
             console.log(result)
             localStorage.setItem('account',JSON.stringify(result))    
             return navigate("/Topics")

@@ -26,8 +26,10 @@ const HeaderTitle = () => {
 const Head = ({ login }) => {
    const account = localStorage.getItem('account')
    useEffect(()=>{
-    if(account){
+    if(account && account.dateLogin === new Date().getDate()){
         location.href="/Topics"
+    }else{
+        localStorage.clear()
     }
    },[])
    if(!account){
