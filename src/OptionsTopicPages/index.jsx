@@ -181,7 +181,8 @@ const OptionsTopicPages = () => {
             <div className="ImageContentComponent">
               <img
                 src={`https://qfoylbowzoertpojnhvy.supabase.co/storage/v1/object/public/modulepicture//${item.PictureName}`}
-                alt=""
+                alt={item.Title}
+                loading="eager"
               />
             </div>
             <div className="FooterContent">

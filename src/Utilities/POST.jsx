@@ -41,7 +41,7 @@ const UploadImageToAPI = async (file) => {
     console.log("HELLO")
     console.log(files)
     try {
-        const response = await fetch(UrlBackEnd + "/" + "UploadImage", {
+        const response = await fetch(UrlBackEnd + "/" + "UploadImageSCC", {
             method: "POST", 
             headers: {
                 'Authorization': `Bearer ${account.access_token}`,

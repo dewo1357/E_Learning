@@ -9,6 +9,7 @@ import { useEffect } from "react";
 import { PostData, UploadImageToAPI } from "../../Utilities/POST";
 import { EditData } from "../../Utilities/PUT";
 import { useNavigate } from "react-router-dom";
+import Popup from "../../Popup/Popup";
 
 const Delta = Quill.import("delta");
 
@@ -27,6 +28,13 @@ const ContainerForm = ({
   let ContentElement = null;
   console.log(ContentElement);
   const navigate = useNavigate();
+
+  //Popup State
+  const [turnOnPopup, setTurnOnpOpup] = useState(false);
+  const [FinishProcess, SetFinsihProcess] = useState(false);
+  const [Message, SetMessage] = useState("Apakah Anda Yaakin?");
+  const ContentModule = useRef();
+  const [CategoryContent, setCategoryContent] = useState(false);
 
   useEffect(() => {
     if ((Setting && idModule) || AddSubModule) {
@@ -65,8 +73,8 @@ const ContainerForm = ({
                 `https://qfoylbowzoertpojnhvy.supabase.co/storage/v1/object/public/modulepicture//${data[0].PictureName}`
             )
           : false;
-      }else{
-        navigate("/")
+      } else {
+        navigate("/");
       }
     } else {
       setContent({
@@ -94,11 +102,6 @@ const ContainerForm = ({
     };
     const fetch = true;
 
-    //execute add Picture
-    if (FilePicture) {
-      await UploadImageToAPI(FilePicture);
-    }
-
     //execute add data To Database
     if (Setting && SettingSub) {
       //merubah data tanpa kolom Title
@@ -110,12 +113,14 @@ const ContainerForm = ({
         LinkEmbed: data.LinkEmbed,
       };
       console.log("Update SubModuleProcess Process");
+
       await EditData(data, `SettingSubModule/${IdSubModule}`);
-      localStorage.removeItem(`ListDetailModule-${idModule}`)
-      localStorage.removeItem('Module')
+      localStorage.removeItem(`ListDetailModule-${idModule}`);
+      localStorage.removeItem("Module");
     } else if (Setting) {
       console.log("Update Process");
       await EditData(data, `SettingModule/${idModule}`);
+      localStorage.removeItem("MyModule");
     } else if (AddSubModule) {
       const SubMyModule = {
         idModule: idModule,
@@ -127,16 +132,33 @@ const ContainerForm = ({
       };
 
       await PostData(SubMyModule, `AddSubModule`, fetch);
-      localStorage.removeItem(`ListDetailModule-${idModule}`)
-      localStorage.removeItem('Module')
+      localStorage.removeItem(`ListDetailModule-${idModule}`);
+      localStorage.removeItem("Module");
+      localStorage.removeItem("MyModule");
     } else {
       await PostData(data, "AddModule", fetch);
     }
+
+    //execute add Picture
+    if (FilePicture) {
+      await UploadImageToAPI(FilePicture);
+    }
+  };
+
+  const CancelAction = () => {
+    setTurnOnpOpup(false);
+  };
+
+
+  const askPopup = () => {
+    setTurnOnpOpup(true);
   };
 
   // Use a ref to access the quill instance directly
   const quillRef = useRef();
   const Submit = async () => {
+    SetMessage("Mohon Ditunggu, Sedang Proses")
+    setCategoryContent("Process");
     const account = JSON.parse(localStorage.getItem("account"));
     await excecute();
     console.log(Content);
@@ -194,7 +216,10 @@ const ContainerForm = ({
   return (
     <>
       {Content ? (
-        <div className="ContainerActionModule" style={{marginLeft:openNavContent?"22%":"7%"}}>
+        <div
+          className="ContainerActionModule"
+          style={{ marginLeft: openNavContent ? "22%" : "7%" }}
+        >
           <div className="FormHeader">
             <div className="FormInformation">
               <form action="">
@@ -244,12 +269,21 @@ const ContainerForm = ({
                 onChange={(e) => setReadOnly(e.target.checked)}
               />
             </label>
-            <button className="controls-right" type="button" onClick={Submit}>
+            <button className="controls-right" type="button" onClick={askPopup}>
               Save My Module
             </button>
           </div>
         </div>
       ) : null}
+      <Popup
+        turnPopup={turnOnPopup}
+        turnOverlay={turnOnPopup}
+        message={Message}
+        Finish={FinishProcess}
+        Category={CategoryContent}
+        action1={CancelAction}
+        action2={Submit}
+      />
     </>
   );
 };
