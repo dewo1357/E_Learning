@@ -131,6 +131,13 @@
     font-weight: bold;
 }
 
+.BackButton button{
+    margin: 0px;
+    background-color: rgb(128, 128, 232);
+    margin-bottom: 10px;
+    color: white;
+}
+
 .EditExercise button:hover{
     background-color: aqua;
 }

@@ -106,6 +106,7 @@ const ContentModule = ({ openNavContent }) => {
                   style={{
                     width: CheckSubModule ? innerWidth < 900 ? "100%": "60%" : "90%",
                     transition: "1000ms",
+                    marginBottom : "100px"
                   }}
                 ></div>
               </div>

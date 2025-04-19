@@ -76,12 +76,14 @@ const ModuleDetailPages = ({ learn, idModule,openNavContent }) => {
         <>
             <div className={!learn ? "ContainerActionModule ContainerModuleDetail" : "smarphone"}  style={{marginLeft:openNavContent?"22%":learn?"":"7%"}}>
                 <div className="PictureLesson">
-                    <div>
+                    <div className="ActionButtonSubModule BackButton">
                         {!learn ?
                             <h1 style={{ color: "black" }}>My Module</h1>
-                            : <Link to={"/Topics"}>
-                                <h1>Back</h1>
-                            </Link>
+                            : <button onClick={()=>{
+                                navigate("/Topics")
+                            }}>
+                                Back
+                            </button>
                         }
                         <img src={Picture} alt="" />
                         <div className="InformationAuthor">
